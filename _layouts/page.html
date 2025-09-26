@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ page.title }}</title>
+    <style>
+        :root {
+            --primary-bg: #1c002b;
+            --secondary-bg: #320044;
+            --primary-text: #f0e6f9;
+            --accent-pink: #ff69b4;
+            --accent-purple: #9370db;
+        }
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: var(--primary-bg);
+            color: var(--primary-text);
+        }
+        .container {
+            max-width: 900px;
+            margin: 50px auto;
+            padding: 2rem;
+            background-color: var(--secondary-bg);
+            border-radius: 10px;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+        }
+        h1, h2, h3 {
+            color: var(--accent-pink);
+            border-bottom: 2px solid var(--accent-purple);
+            padding-bottom: 0.5rem;
+            margin-top: 2rem;
+        }
+        a {
+            color: var(--accent-pink);
+            text-decoration: none;
+        }
+        a:hover {
+            text-decoration: underline;
+        }
+        ul {
+            list-style: none;
+            padding: 0;
+        }
+        li {
+            margin: 0.5rem 0;
+        }
+	.navbar {
+    background-color: var(--secondary-bg); /* slightly lighter purple */
+    padding: 1rem 2rem;
+    border-radius: 8px;
+    margin-bottom: 2rem;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.4);
+    text-align: center;
+  }
+
+  .navbar ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+  }
+
+  .navbar a {
+    color: var(--accent-pink);
+    font-weight: bold;
+    text-decoration: none;
+    font-size: 1.1rem;
+    transition: all 0.3s ease;
+    padding: 0.5rem 1rem;
+    border-radius: 6px;
+  }
+
+  .navbar a:hover {
+    background-color: var(--accent-purple);
+    color: var(--primary-text);
+    text-shadow: 0 0 6px var(--accent-pink);
+  }
+  .vidcontainer {
+	display: flex;
+	padding: 1rem;
+	justify-content: center;
+}
+
+    </style>
+</head>
+<body>
+    <nav class="navbar">
+  <ul>
+    {% assign pages_list = site.pages | where_exp: "page", "page.nav != false" %}
+    {% for page in pages_list %}
+      {% if page.title %}
+        <li><a href="{{ page.url | relative_url }}">{{ page.title }}</a></li>
+      {% endif %}
+    {% endfor %}
+  </ul>
+</nav>
+
+    <div class="container">
+        <h1>{{ page.title }}</h1>
+        {{ content }}
+    </div>
+</body>
+</html>
+
