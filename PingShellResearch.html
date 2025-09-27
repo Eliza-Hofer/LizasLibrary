@@ -197,8 +197,9 @@ def send_ping(ip_address):
 
 
 	    </code></pre>
-	    <video src="{{ '/media/PingShellVid.mp4' | relative_url }}" width="580" height="490" autoplay loop muted></video>
-
+	    	<div class="vidcontainer">
+        <img src="{{ '/media/winver.png' | relative_url }}" width="480" height="400" alt="winver command sent from c2" />
+      </div>
         </section>
         <section id="findings">
             <h2>Findings</h2>
@@ -214,6 +215,10 @@ iptables -A INPUT -p icmp --icmp-type echo-request -m recent --name pingtrack --
 	</code></pre>
 	<p>This rule lasts an entire day meaning to get past this the delay between each ping would have to be longer than a day. The only way to get around this delay would require the attacker to expand the c2 infrastrtucture and the code of pingshell itselff to accept pings from multiple addresses to encode the same bits. If address rotations were implemented the firewall and IDS rules would be rendered obsolete. Below I have a video of my findings as well as the command I sent. Because this is a proof of concept I will be using a simple payload to display the windows version and then close it. However considering direct access to the run bar, it is possible to do nearly whatever you want including downloads, or execution of other files. As you can see in the image, I send the command "winver" and on the right screen of the video you can see the binary buffer accumulating. When the binary buffer has the full binary of the command you can see the run dialog trigger then type the plaintext of the command and execute. I have left the debug messages in my code so you can visually see each packet coming in and the binary buffer accumulating. Now this version is loud, obvious, and would never make it onto someone's computer without intentional modification and malicious action. That said if you are interested in how this type of malware could in theory get onto a target computer you can visit my <a href="impact_analysis.html">Impact Analysis</a> where I go into detail about potential vectors, risks, and security implications of this malicous code. </p>
 	<div class="vidcontainer">
+        <img src="{{ '/media/winver.png' | relative_url }}" width="480" height="400" alt="winver command sent from c2" />
+      </div>
+
+	<div class="vidcontainer">
         <video width="580" height="490" autoplay loop muted controls>
           <source src="{{ '/media/PingShellVid.mp4' | relative_url }}" type="video/mp4" />
           Your browser does not support the video tag.
@@ -223,10 +228,7 @@ iptables -A INPUT -p icmp --icmp-type echo-request -m recent --name pingtrack --
         <section id="conclusion">
             <h2>Conclusion</h2>
             <p>My research demonstrates that it is absolutely possible and viable to use empty ICMP echo requests to transmit data and commands to a remote host by using the source IP to write data to a buffer to be executed. This data transmission can be prevented with time based firewall rules, but if the attacker is patient enough there is still possibility of getting around these rules by adding a long enough delay. These rules can make the life of an administraitor a bit harder, luckily with PingSmell these binary patterns can be detected and stopped before commands can be executed. </p>
-	    <div class="vidcontainer">
-        <img src="{{ '/media/winver.png' | relative_url }}" width="480" height="400" alt="winver command sent from c2" />
-      </div>
-        </section>
+	          </section>
     </main>
     <footer>
         <p>&copy; 2025 Eliza Hofer</p>
