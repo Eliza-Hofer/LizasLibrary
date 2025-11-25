@@ -24,16 +24,28 @@ description: >- # this means to ignore newlines until "baseurl:"
   Write an awesome description for your new site here. You can edit this
   line in _config.yml. It will appear in your document head meta (for
   Google search results) and in your feed.xml site description.
-url: "https://eliza-hofer.github.io"   # your GitHub Pages URL (no trailing slash)
-baseurl: "/LizasLibrary"               # the repo name, *with* a leading slash
+url: "https://eliza-hofer.github.io"    # your GitHub Pages URL (no trailing slash)
+baseurl: "/LizasLibrary"                # the repo name, *with* a leading slash
 
 twitter_username: jekyllrb
-github_username:  jekyll
+github_username: jekyll
+
+# --- NAVIGATION CONTROL (The Fix) ---
+# Minima will ONLY include the pages listed here in the main navigation.
+# You must list every page you want to appear in the header.
+header_pages:
+  - index.md
+  - about.md
+ # Assuming you have a blog or posts page
+  # Add other pages like contact.md, archive.md, etc., here.
 
 # Build settings
 theme: minima
 plugins:
   - jekyll-feed
+
+# NOTE: The 'defaults' block that previously used 'nav_exclude: true' 
+# has been removed as it is no longer the correct fix.
 
 # Exclude from processing.
 # The following items will not be processed, by default.
