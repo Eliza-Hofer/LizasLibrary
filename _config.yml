@@ -38,6 +38,12 @@ header_pages:
   - about.md
  # Assuming you have a blog or posts page
   # Add other pages like contact.md, archive.md, etc., here.
+collections:
+  projects:
+    output: true
+    permalink: /projects/:name/
+
+excerpt_separator: "<!--more-->"
 
 # Build settings
 theme: minima
