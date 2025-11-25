@@ -187,23 +187,16 @@
 </head>
 <body>
     <nav class="navbar">
-      <ul>
-        {% assign pages_list = site.pages | where_exp: "page", "page.nav != false" %}
-        {% for page in pages_list %}
-          {% comment %} 
-            ***THE CRITICAL FIX***:
-            This line filters out any page that has the 'tag' property defined in its data,
-            which only applies to the pages created by your Ruby plugin.
-          {% endcomment %}
-          {% unless page.tag %} 
-            {% if page.title %}
-              <li><a href="{{ page.url | relative_url }}">{{ page.title }}</a></li>
-            {% endif %}
-          {% endunless %}
-        {% endfor %}
-      </ul>
-    </nav>
-
+  <ul>
+    {% assign pages_list = site.pages | where_exp: "page", "page.nav != false and page.title" | sort: 'nav_order' %}
+    
+    {% for page in pages_list %}
+      {% unless page.tag or page.exclude_from_nav %} 
+        <li><a href="{{ page.url | relative_url }}">{{ page.title }}</a></li>
+      {% endunless %}
+    {% endfor %}
+  </ul>
+</nav>
     <div class="container">
         <h1>{{ page.title }}</h1>
         {{ content }}

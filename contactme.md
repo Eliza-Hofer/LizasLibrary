@@ -2,6 +2,7 @@
 layout: page
 title: Contact
 permalink: /contact/
+nav_order: 3
 ---
 
 # Get in Touch
@@ -18,7 +19,7 @@ For time-sensitive or professional communication:
 
 ## GitHub
 Check out my code, projects, and ongoing experiments:  
-🐙 **[github.com/CheshireKitn](https://github.com/CheshireKitn)**
+🐙 **[github.com/CheshireKitn](https://github.com/Eliza-Hofer)**
 
 ## LinkedIn
 Connect with me professionally:  

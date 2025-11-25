@@ -3,7 +3,7 @@ layout: page
 title: "PingShell"
 permalink: /pingshell/
 nav_order: 3
-tags: ["Cybersecurity"]
+tags: ["Cybersecurity", "Development", "Open-Source","Python"]
 ---
 
 # Smuggling Data and Commands Over Empty Pings

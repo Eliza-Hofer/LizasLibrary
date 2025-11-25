@@ -1,0 +1,30 @@
+---
+layout: page
+---
+<article class="tag-page-listing">
+  <header>
+    <p class="tag-summary">
+      Showing **{{ page.tagged_content | size }}** total items.
+    </p>
+  </header>
+
+  {% if page.tagged_content %}
+    <ul class="tagged-content-list">
+    {% for item in page.tagged_content %}
+      <li class="tagged-item">
+        <h3><a href="{{ item.url | relative_url }}">{{ item.title }}</a></h3>
+        
+        {% if item.date %}
+          <small class="item-date">{{ item.date | date: "%B %-d, %Y" }}</small>
+        {% endif %}
+
+        {% if item.excerpt %}
+          <p>{{ item.excerpt | strip_html | truncate: 150 }}</p>
+        {% endif %}
+      </li>
+    {% endfor %}
+    </ul>
+  {% else %}
+    <p>We haven't created content for the **{{ page.tag }}** tag yet!</p>
+  {% endif %}
+</article>

@@ -1,0 +1,35 @@
+---
+layout: page
+title: "All Project Tags Index"
+permalink: /tags/
+nav_order: 6
+---
+
+<h1>All Project Tags Index</h1>
+
+<p>Click on any tag below to see the associated posts and projects.</p>
+
+{% comment %} 
+  1. Collect all tags from posts and projects 
+  2. Join them into one string, split into an array, sort, and get unique values
+{% endcomment %}
+{% assign tags = site.posts | map: 'tags' | join: ',' | append: ',' | append: site.projects | map: 'tags' | join: ',' | split: ',' | sort | uniq %}
+
+<div class="tag-cloud">
+{% for tag in tags %}
+  {% assign tag = tag | strip %} {# Clean up whitespace #}
+  {% unless tag == "" %}
+    {% assign slug = tag | downcase | replace: ' ', '-' %}
+    
+    {# 3. Calculate how many items have this tag (optional but useful) #}
+    {% assign count = 0 %}
+    {% for post in site.posts %}{% if post.tags contains tag %}{% assign count = count | plus: 1 %}{% endif %}{% endfor %}
+    {% for project in site.projects %}{% if project.tags contains tag %}{% assign count = count | plus: 1 %}{% endif %}{% endfor %}
+    
+    {# 4. Link to the individual page created by the generator plugin #}
+    <a href="{{ '/tags/' | append: slug | append: '/' | relative_url }}" class="tag-link">
+      {{ tag }} ({{ count }})
+    </a>
+  {% endunless %}
+{% endfor %}
+</div>
