@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>E-Waste Restoration and Repurposing</title>
+    <style>
+        :root {
+            --primary-bg: #1c002b;
+            --secondary-bg: #320044;
+            --primary-text: #f0e6f9;
+            --accent-pink: #ff69b4;
+            --accent-purple: #9370db;
+
+            /* additional variables to replace the missing Sass ones */
+            --primary-color: #3b1c47;      /* used as a card base / placeholder fallback */
+            --text-color: #e0c7e7;         /* general muted text color */
+            --muted-color: #bfa4bf;        /* tags / subtle text */
+            --link-color: #ff8aff;         /* link / tag highlight */
+        }
+
+        /* base */
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: var(--primary-bg);
+            color: var(--primary-text);
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 50px auto;
+            padding: 2rem;
+            background-color: var(--secondary-bg);
+            border-radius: 10px;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+        }
+
+        h1, h2, h3 {
+            color: var(--accent-pink);
+            border-bottom: 2px solid var(--accent-purple);
+            padding-bottom: 0.5rem;
+            margin-top: 2rem;
+        }
+
+        a {
+            color: var(--accent-pink);
+            text-decoration: none;
+        }
+        a:hover { text-decoration: underline; }
+
+        ul { margin-left: 30px; padding-left: 0; }
+        li { margin-left: 30px; padding-left: 0; }
+
+        .navbar {
+            background-color: var(--secondary-bg); /* slightly lighter purple */
+            padding: 1rem 2rem;
+            border-radius: 8px;
+            margin-bottom: 2rem;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.4);
+            text-align: center;
+        }
+
+        .navbar ul {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+        }
+
+        .navbar a {
+            color: var(--accent-pink);
+            font-weight: bold;
+            text-decoration: none;
+            font-size: 1.1rem;
+            transition: all 0.3s ease;
+            padding: 0.5rem 1rem;
+            border-radius: 6px;
+        }
+
+        .navbar a:hover {
+            background-color: var(--accent-purple);
+            color: var(--primary-text);
+            text-shadow: 0 0 6px var(--accent-pink);
+        }
+
+        .vidcontainer {
+            display: flex;
+            padding: 1rem;
+            justify-content: center;
+        }
+
+        /* Projects grid & cards */
+        .project-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 1.5rem;
+            margin-top: 2rem;
+        }
+
+        .project-card {
+            background: var(--primary-color); /* deep purple base */
+            border: 1px solid #c27ac8; /* soft lavender border */
+            border-radius: 12px;
+            padding: 1rem;
+            text-align: center;
+            transition: transform 0.2s ease, box-shadow 0.3s ease;
+            box-shadow: 0 0 10px rgba(194, 122, 200, 0.2);
+        }
+
+        .project-card img {
+            width: 100%;
+            border-radius: 10px;
+            margin-bottom: 0.75rem;
+        }
+
+        .project-card h2 {
+            font-size: 1.2rem;
+            color: #ffb3ff; /* light pink text */
+            margin-bottom: 0.5rem;
+        }
+
+        .project-card p {
+            color: var(--text-color);
+        }
+
+        /* merged hover behaviour */
+        .project-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 10px 30px rgba(43,36,51,0.09);
+            border-color: #ff8aff;
+        }
+
+        .project-link {
+            color: inherit;
+            text-decoration: none;
+            display: block;
+        }
+
+        .project-thumb {
+            width: 100%;
+            height: 150px;
+            object-fit: cover;
+            display: block;
+            border-radius: 8px;
+        }
+
+        /* placeholder if no thumbnail */
+        .project-thumb--placeholder {
+            background: var(--primary-color);
+            color: var(--primary-text);
+            height: 150px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 700;
+            font-size: 40px;
+            border-radius: 8px;
+        }
+
+        /* meta */
+        .project-meta {
+            padding: 0.9rem 1rem 1.2rem;
+        }
+
+        .project-title {
+            margin: 0 0 0.3rem;
+            font-size: 1.05rem;
+        }
+
+        /* safe replacement for Sass lighten($text-color, 20%) */
+        .project-excerpt {
+            margin: 0 0 0.6rem;
+            color: rgba(224,199,231,0.9); /* slightly lighter than --text-color */
+            font-size: 0.95rem;
+        }
+
+        .project-tags {
+            font-size: 0.85rem;
+            color: var(--muted-color);
+        }
+
+        .project-tag {
+            color: var(--link-color);
+            text-decoration: none;
+        }
+
+    </style>
+</head>
+<body>
+    <nav class="navbar">
+      <ul>
+        
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    <li><a href="/LizasLibrary/">Welcome to Liza's Library 📖</a></li>
+  
+
+  
+    <li><a href="/LizasLibrary/AboutMe/">About Me</a></li>
+  
+
+  
+    <li><a href="/LizasLibrary/contact/">Contact</a></li>
+  
+
+  
+    <li><a href="/LizasLibrary/skills/">Skills</a></li>
+  
+
+  
+    <li><a href="/LizasLibrary/projects/">Projects</a></li>
+  
+
+  
+    <li><a href="/LizasLibrary/tags/">All Project Tags Index</a></li>
+  
+
+      </ul>
+    </nav>
+
+    <div class="container">
+        <h1>E-Waste Restoration and Repurposing</h1>
+        <h1 id="from-scrap-to-server-repurposing-end-of-life-electronics">From Scrap to Server: Repurposing End-of-Life Electronics</h1>
+
+<p>This project documents my hands-on experinece to combating electronic waste by fully restoring, upgrading, and repurposing discarded or non-functioning computer hardware. For this project there are two primary objectives: to practice <strong>low-level hardware and software troubleshooting and maintenance</strong> and to demonstrate a practical approach to <strong>managing E-Waste</strong>.</p>
+
+<p>The focus was on a collection of Panasonic Toughbbooks aquired through a government auction. The initial problem with the toughbooks was a lack of hardrives in each system. Luckily these laptops are modular making them convienient to replace parts on. After installing harddrives in the machines, I needed to put an operating system on the machines to run. For my personal machine I used my own custom flavor of Arch Linux, which works excellent on the tough books due to its light weight, however Arch linux does not have the right drivers for the touchpad. Because of this, I have begun writing these drivers myself, but in the meanitme I installed MX linux on the other Toughbooks. I chose this distrobutionn because of its relative ease of use for new linux users. While it works much like Ubuntu or Debian, MX Linux is the spiritual successor to Antix Linux, the antifacist distrobution. With this distrobution, I was able to ennable the touchpad and make the machine fully functional, but before I could fix the mouse, I had figure out how to unlock the bios. The bios was password protected, so I looked for default passwords on panasonic devices, and tried passwords until one finally worked. To make these machines appealing to buy I also downloaded all of wikipedia to the harddrive for offline viewing, and gave each laptop a set of useful preinstalled tools and instructions for how to use the machine.</p>
+
+<h3 id="key-tools--skills">Key Tools &amp; Skills</h3>
+
+<ul>
+  <li><strong>Software:</strong> Linux (Ubuntu/Debian/Arch/Antix), custom shell scripting, low-level disk utilities.</li>
+  <li><strong>Hardware:</strong> Hard drive replacement, BIOS unlocking, Driver fixing.</li>
+  <li><strong>Outcome:</strong> A resilient daily driver computer that meets all of the needs of the user for homework and lightweight gaming needs..</li>
+</ul>
+
+
+    </div>
+</body>
+</html>
+

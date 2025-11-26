@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Content Tagged: Development</title>
+    <style>
+        :root {
+            --primary-bg: #1c002b;
+            --secondary-bg: #320044;
+            --primary-text: #f0e6f9;
+            --accent-pink: #ff69b4;
+            --accent-purple: #9370db;
+
+            /* additional variables to replace the missing Sass ones */
+            --primary-color: #3b1c47;      /* used as a card base / placeholder fallback */
+            --text-color: #e0c7e7;         /* general muted text color */
+            --muted-color: #bfa4bf;        /* tags / subtle text */
+            --link-color: #ff8aff;         /* link / tag highlight */
+        }
+
+        /* base */
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: var(--primary-bg);
+            color: var(--primary-text);
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 50px auto;
+            padding: 2rem;
+            background-color: var(--secondary-bg);
+            border-radius: 10px;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+        }
+
+        h1, h2, h3 {
+            color: var(--accent-pink);
+            border-bottom: 2px solid var(--accent-purple);
+            padding-bottom: 0.5rem;
+            margin-top: 2rem;
+        }
+
+        a {
+            color: var(--accent-pink);
+            text-decoration: none;
+        }
+        a:hover { text-decoration: underline; }
+
+        ul { margin-left: 30px; padding-left: 0; }
+        li { margin-left: 30px; padding-left: 0; }
+
+        .navbar {
+            background-color: var(--secondary-bg); /* slightly lighter purple */
+            padding: 1rem 2rem;
+            border-radius: 8px;
+            margin-bottom: 2rem;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.4);
+            text-align: center;
+        }
+
+        .navbar ul {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+        }
+
+        .navbar a {
+            color: var(--accent-pink);
+            font-weight: bold;
+            text-decoration: none;
+            font-size: 1.1rem;
+            transition: all 0.3s ease;
+            padding: 0.5rem 1rem;
+            border-radius: 6px;
+        }
+
+        .navbar a:hover {
+            background-color: var(--accent-purple);
+            color: var(--primary-text);
+            text-shadow: 0 0 6px var(--accent-pink);
+        }
+
+        .vidcontainer {
+            display: flex;
+            padding: 1rem;
+            justify-content: center;
+        }
+
+        /* Projects grid & cards */
+        .project-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 1.5rem;
+            margin-top: 2rem;
+        }
+
+        .project-card {
+            background: var(--primary-color); /* deep purple base */
+            border: 1px solid #c27ac8; /* soft lavender border */
+            border-radius: 12px;
+            padding: 1rem;
+            text-align: center;
+            transition: transform 0.2s ease, box-shadow 0.3s ease;
+            box-shadow: 0 0 10px rgba(194, 122, 200, 0.2);
+        }
+
+        .project-card img {
+            width: 100%;
+            border-radius: 10px;
+            margin-bottom: 0.75rem;
+        }
+
+        .project-card h2 {
+            font-size: 1.2rem;
+            color: #ffb3ff; /* light pink text */
+            margin-bottom: 0.5rem;
+        }
+
+        .project-card p {
+            color: var(--text-color);
+        }
+
+        /* merged hover behaviour */
+        .project-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 10px 30px rgba(43,36,51,0.09);
+            border-color: #ff8aff;
+        }
+
+        .project-link {
+            color: inherit;
+            text-decoration: none;
+            display: block;
+        }
+
+        .project-thumb {
+            width: 100%;
+            height: 150px;
+            object-fit: cover;
+            display: block;
+            border-radius: 8px;
+        }
+
+        /* placeholder if no thumbnail */
+        .project-thumb--placeholder {
+            background: var(--primary-color);
+            color: var(--primary-text);
+            height: 150px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 700;
+            font-size: 40px;
+            border-radius: 8px;
+        }
+
+        /* meta */
+        .project-meta {
+            padding: 0.9rem 1rem 1.2rem;
+        }
+
+        .project-title {
+            margin: 0 0 0.3rem;
+            font-size: 1.05rem;
+        }
+
+        /* safe replacement for Sass lighten($text-color, 20%) */
+        .project-excerpt {
+            margin: 0 0 0.6rem;
+            color: rgba(224,199,231,0.9); /* slightly lighter than --text-color */
+            font-size: 0.95rem;
+        }
+
+        .project-tags {
+            font-size: 0.85rem;
+            color: var(--muted-color);
+        }
+
+        .project-tag {
+            color: var(--link-color);
+            text-decoration: none;
+        }
+
+    </style>
+</head>
+<body>
+    <nav class="navbar">
+      <ul>
+        
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    <li><a href="/LizasLibrary/">Welcome to Liza's Library 📖</a></li>
+  
+
+  
+    <li><a href="/LizasLibrary/AboutMe/">About Me</a></li>
+  
+
+  
+    <li><a href="/LizasLibrary/contact/">Contact</a></li>
+  
+
+  
+    <li><a href="/LizasLibrary/skills/">Skills</a></li>
+  
+
+  
+    <li><a href="/LizasLibrary/projects/">Projects</a></li>
+  
+
+  
+    <li><a href="/LizasLibrary/tags/">All Project Tags Index</a></li>
+  
+
+      </ul>
+    </nav>
+
+    <div class="container">
+        <h1>Content Tagged: Development</h1>
+        <article class="tag-page-listing">
+  <header>
+    <p class="tag-summary">
+      Showing **1** total items.
+    </p>
+  </header>
+
+  
+    <ul class="tagged-content-list">
+    
+      <li class="tagged-item">
+        <h3><a href="/LizasLibrary/pingshell/">PingShell</a></h3>
+        
+        
+          <small class="item-date">November 25, 2025</small>
+        
+
+        
+          <p>Smuggling Data and Commands Over Empty Pings
+
+
+  Introduction
+  Methodology
+  Findings
+  Conclusions
+
+
+
+Introduction
+
+I have always had a fascinati...</p>
+        
+      </li>
+    
+    </ul>
+  
+</article>
+
+    </div>
+</body>
+</html>
+

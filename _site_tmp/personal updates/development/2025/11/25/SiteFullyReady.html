@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The New Site is Live: Exploring My Technical Home</title>
+    <style>
+        :root {
+            --primary-bg: #1c002b;
+            --secondary-bg: #320044;
+            --primary-text: #f0e6f9;
+            --accent-pink: #ff69b4;
+            --accent-purple: #9370db;
+        }
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: var(--primary-bg);
+            color: var(--primary-text);
+        }
+        .container {
+            max-width: 800px;
+            margin: 50px auto;
+            padding: 2rem;
+            background-color: var(--secondary-bg);
+            border-radius: 10px;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+        }
+        h1, h2, h3 {
+            color: var(--accent-pink);
+            border-bottom: 2px solid var(--accent-purple);
+            padding-bottom: 0.5rem;
+            margin-top: 2rem;
+        }
+        a {
+            color: var(--accent-pink);
+            text-decoration: none;
+        }
+        a:hover {
+            text-decoration: underline;
+        }
+        code {
+            background-color: #4a0066;
+            padding: 2px 6px;
+            border-radius: 4px;
+        }
+        pre {
+            background-color: #4a0066;
+            padding: 1rem;
+            border-radius: 8px;
+            overflow-x: auto;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>The New Site is Live: Exploring My Technical Home</h1>
+        <p>Hey everyone!</p>
+
+<p>Welcome to the new digital home for all my projects and thoughts. I’ve been wanting a consolidated space to share everything—from my deep dives into <strong>Cybersecurity</strong> to the latest steps in my <strong>E-Waste Restoration</strong> hobby and, of course, updates on my <strong>Open-Source</strong> work. This site is that space!</p>
+
+<p>It’s built with <strong>Jekyll</strong>, which gives me full control over the presentation, performance, and structure. But what makes it truly tick is the custom engineering that went into the core functionality.</p>
+
+<hr />
+
+<h2 id="-navigating-the-core-features">🧭 Navigating the Core Features</h2>
+
+<p>I designed this site to be fast, minimal, and, most importantly, easy to explore.</p>
+
+<h3 id="1-projects-and-posts-integration">1. Projects and Posts Integration</h3>
+
+<p>I use Jekyll’s built-in collections to separate my content:</p>
+<ul>
+  <li><strong>Posts:</strong> This is where you’ll find long-form articles, tutorials, and deep technical dives.</li>
+  <li><strong>Projects:</strong> These are more focused entries detailing specific technical endeavors, like hardware builds or major code contributions.</li>
+</ul>
+
+<p>The entire site is structured so that both types of content are searchable and linked together seamlessly.</p>
+
+<h3 id="2-the-custom-tagging-engine-">2. The Custom Tagging Engine 💎</h3>
+
+<p>This is the most powerful feature under the hood. Unlike standard Jekyll sites, which often require manual lists for tags, I built a custom <strong>Jekyll Generator plugin</strong> in Ruby.</p>
+
+<p>This plugin ensures that tagging is dynamic and automatic:</p>
+<ul>
+  <li>I only have to add a tag to a post’s front matter (e.g., <code class="language-plaintext highlighter-rouge">tags: [Python, Cybersecurity]</code>).</li>
+  <li>During the site build, the Ruby script scans <em>all</em> my content, collects every unique tag, and automatically <strong>generates a complete, separate tag page</strong> for each one (e.g., <code class="language-plaintext highlighter-rouge">/tags/python/</code>).</li>
+  <li>This page automatically includes <strong>both</strong> the relevant Posts and Projects, giving you a comprehensive view of everything I’ve done on a given topic.</li>
+</ul>
+
+<p>This engine means less administrative work for me and a better, more complete browsing experience for you!</p>
+
+<h3 id="3-clean-and-accessible-design">3. Clean and Accessible Design</h3>
+
+<p>You might notice the design is clean, fast, and uses a focused color palette. The CSS is lightweight, ensuring quick load times, which is always a priority for me. The entire layout is structured to keep the focus purely on the content, whether you’re reading a complex write-up or browsing a project card.</p>
+
+<hr />
+
+<h2 id="️-whats-next">➡️ What’s Next?</h2>
+
+<p>Now that the foundation is solid, expect a lot more content. I’ll be sharing detailed project logs, starting with a comprehensive write-up on my latest <strong>E-Waste Restoration</strong>, and a deep-dive technical post on the Python library I just published.</p>
+
+<p>Thanks for checking out the site. Feel free to explore using the tags index, and please let me know what you think!</p>
+
+    </div>
+    
+  <p class="post-tags">
+    Tags: 
+    
+      <a href="/tags/jekyll/" class="tag">Jekyll</a>, 
+    
+      <a href="/tags/ruby/" class="tag">Ruby</a>, 
+    
+      <a href="/tags/open-source/" class="tag">Open-Source</a>, 
+    
+      <a href="/tags/personal-updates/" class="tag">Personal Updates</a>
+    
+  </p>
+
+
+</body>
+</html>
+

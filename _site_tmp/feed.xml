@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.4.1">Jekyll</generator><link href="https://eliza-hofer.github.io/LizasLibrary/feed.xml" rel="self" type="application/atom+xml" /><link href="https://eliza-hofer.github.io/LizasLibrary/" rel="alternate" type="text/html" /><updated>2025-11-25T20:40:40-05:00</updated><id>https://eliza-hofer.github.io/LizasLibrary/feed.xml</id><title type="html">Your awesome title</title><subtitle>Write an awesome description for your new site here. You can edit this line in _config.yml. It will appear in your document head meta (for Google search results) and in your feed.xml site description.</subtitle><entry><title type="html">The New Site is Live: Exploring My Technical Home</title><link href="https://eliza-hofer.github.io/LizasLibrary/personal%20updates/development/2025/11/25/SiteFullyReady.html" rel="alternate" type="text/html" title="The New Site is Live: Exploring My Technical Home" /><published>2025-11-25T18:07:27-05:00</published><updated>2025-11-25T18:07:27-05:00</updated><id>https://eliza-hofer.github.io/LizasLibrary/personal%20updates/development/2025/11/25/SiteFullyReady</id><content type="html" xml:base="https://eliza-hofer.github.io/LizasLibrary/personal%20updates/development/2025/11/25/SiteFullyReady.html"><![CDATA[<p>Hey everyone!</p>
+
+<p>Welcome to the new digital home for all my projects and thoughts. I’ve been wanting a consolidated space to share everything—from my deep dives into <strong>Cybersecurity</strong> to the latest steps in my <strong>E-Waste Restoration</strong> hobby and, of course, updates on my <strong>Open-Source</strong> work. This site is that space!</p>
+
+<p>It’s built with <strong>Jekyll</strong>, which gives me full control over the presentation, performance, and structure. But what makes it truly tick is the custom engineering that went into the core functionality.</p>
+
+<hr />
+
+<h2 id="-navigating-the-core-features">🧭 Navigating the Core Features</h2>
+
+<p>I designed this site to be fast, minimal, and, most importantly, easy to explore.</p>
+
+<h3 id="1-projects-and-posts-integration">1. Projects and Posts Integration</h3>
+
+<p>I use Jekyll’s built-in collections to separate my content:</p>
+<ul>
+  <li><strong>Posts:</strong> This is where you’ll find long-form articles, tutorials, and deep technical dives.</li>
+  <li><strong>Projects:</strong> These are more focused entries detailing specific technical endeavors, like hardware builds or major code contributions.</li>
+</ul>
+
+<p>The entire site is structured so that both types of content are searchable and linked together seamlessly.</p>
+
+<h3 id="2-the-custom-tagging-engine-">2. The Custom Tagging Engine 💎</h3>
+
+<p>This is the most powerful feature under the hood. Unlike standard Jekyll sites, which often require manual lists for tags, I built a custom <strong>Jekyll Generator plugin</strong> in Ruby.</p>
+
+<p>This plugin ensures that tagging is dynamic and automatic:</p>
+<ul>
+  <li>I only have to add a tag to a post’s front matter (e.g., <code class="language-plaintext highlighter-rouge">tags: [Python, Cybersecurity]</code>).</li>
+  <li>During the site build, the Ruby script scans <em>all</em> my content, collects every unique tag, and automatically <strong>generates a complete, separate tag page</strong> for each one (e.g., <code class="language-plaintext highlighter-rouge">/tags/python/</code>).</li>
+  <li>This page automatically includes <strong>both</strong> the relevant Posts and Projects, giving you a comprehensive view of everything I’ve done on a given topic.</li>
+</ul>
+
+<p>This engine means less administrative work for me and a better, more complete browsing experience for you!</p>
+
+<h3 id="3-clean-and-accessible-design">3. Clean and Accessible Design</h3>
+
+<p>You might notice the design is clean, fast, and uses a focused color palette. The CSS is lightweight, ensuring quick load times, which is always a priority for me. The entire layout is structured to keep the focus purely on the content, whether you’re reading a complex write-up or browsing a project card.</p>
+
+<hr />
+
+<h2 id="️-whats-next">➡️ What’s Next?</h2>
+
+<p>Now that the foundation is solid, expect a lot more content. I’ll be sharing detailed project logs, starting with a comprehensive write-up on my latest <strong>E-Waste Restoration</strong>, and a deep-dive technical post on the Python library I just published.</p>
+
+<p>Thanks for checking out the site. Feel free to explore using the tags index, and please let me know what you think!</p>]]></content><author><name>Your Name</name></author><category term="Personal Updates" /><category term="Development" /><category term="Jekyll" /><category term="Ruby" /><category term="Open-Source" /><category term="Personal Updates" /><summary type="html"><![CDATA[Hey everyone! Welcome to the new digital home for all my projects and thoughts. I’ve been wanting a consolidated space to share everything—from my deep dives into Cybersecurity to the latest steps in my E-Waste Restoration hobby and, of course, updates on my Open-Source work. This site is that space! It’s built with Jekyll, which gives me full control over the presentation, performance, and structure. But what makes it truly tick is the custom engineering that went into the core functionality. 🧭 Navigating the Core Features I designed this site to be fast, minimal, and, most importantly, easy to explore. 1. Projects and Posts Integration I use Jekyll’s built-in collections to separate my content: Posts: This is where you’ll find long-form articles, tutorials, and deep technical dives. Projects: These are more focused entries detailing specific technical endeavors, like hardware builds or major code contributions. The entire site is structured so that both types of content are searchable and linked together seamlessly. 2. The Custom Tagging Engine 💎 This is the most powerful feature under the hood. Unlike standard Jekyll sites, which often require manual lists for tags, I built a custom Jekyll Generator plugin in Ruby. This plugin ensures that tagging is dynamic and automatic: I only have to add a tag to a post’s front matter (e.g., tags: [Python, Cybersecurity]). During the site build, the Ruby script scans all my content, collects every unique tag, and automatically generates a complete, separate tag page for each one (e.g., /tags/python/). This page automatically includes both the relevant Posts and Projects, giving you a comprehensive view of everything I’ve done on a given topic. This engine means less administrative work for me and a better, more complete browsing experience for you! 3. Clean and Accessible Design You might notice the design is clean, fast, and uses a focused color palette. The CSS is lightweight, ensuring quick load times, which is always a priority for me. The entire layout is structured to keep the focus purely on the content, whether you’re reading a complex write-up or browsing a project card. ➡️ What’s Next? Now that the foundation is solid, expect a lot more content. I’ll be sharing detailed project logs, starting with a comprehensive write-up on my latest E-Waste Restoration, and a deep-dive technical post on the Python library I just published. Thanks for checking out the site. Feel free to explore using the tags index, and please let me know what you think!]]></summary></entry><entry><title type="html">Code Snippets</title><link href="https://eliza-hofer.github.io/LizasLibrary/jekyll/update/2025/11/17/CodeSnips.html" rel="alternate" type="text/html" title="Code Snippets" /><published>2025-11-17T00:00:00-05:00</published><updated>2025-11-17T00:00:00-05:00</updated><id>https://eliza-hofer.github.io/LizasLibrary/jekyll/update/2025/11/17/CodeSnips</id><content type="html" xml:base="https://eliza-hofer.github.io/LizasLibrary/jekyll/update/2025/11/17/CodeSnips.html"><![CDATA[<p><strong>Here</strong> is the code snippet we will be using first.</p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&lt;div class="f6"&gt;
+	    
+    &lt;/div&gt;
+</code></pre></div></div>
+<p><a href="https://docs.google.com/forms/d/e/1FAIpQLSegP0hCYwo1ipc4M5OnM1Y2z8IZXHRvrfgYlV6AVocgbJD9KA/viewform?usp=publish-editor">Here</a> is the link to the assessment.</p>]]></content><author><name></name></author><category term="jekyll" /><category term="update" /><summary type="html"><![CDATA[Here is the code snippet we will be using first. &lt;div class="f6"&gt; &lt;/div&gt; Here is the link to the assessment.]]></summary></entry></feed>
