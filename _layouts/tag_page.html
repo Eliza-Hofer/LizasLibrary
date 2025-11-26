@@ -1,30 +1,146 @@
----
-layout: page
----
-<article class="tag-page-listing">
+<!-- _layouts/tag_page.html -->
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <link rel="stylesheet" href="{{ '/assets/main.css' | relative_url }}">
+  <title>{{ page.title }} | {{ site.title }}</title>
+  <style>
+  :root {
+    --primary-bg: #1c002b;
+    --secondary-bg: #320044;
+    --primary-text: #f0e6f9;
+    --accent-pink: #ff69b4;
+    --accent-purple: #9370db;
+  }
+
+  body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: var(--primary-bg);
+    color: var(--primary-text);
+  }
+
+  header {
+    text-align: center;
+    padding: 2rem 1rem;
+    background-color: var(--secondary-bg);
+    border-bottom: 2px solid var(--accent-purple);
+    box-shadow: 0 4px 15px rgba(0,0,0,0.4);
+  }
+
+  header h1 {
+    margin: 0 0 0.5rem;
+    color: var(--accent-pink);
+    font-size: 2rem;
+  }
+
+  header p {
+    margin: 0;
+    font-size: 0.95rem;
+  }
+
+  main {
+    max-width: 900px;
+    margin: 2rem auto;
+    padding: 2rem;
+    background-color: var(--secondary-bg);
+    border-radius: 10px;
+    box-shadow: 0 0 20px rgba(0,0,0,0.5);
+  }
+
+  main p {
+    font-size: 1rem;
+    margin-bottom: 1rem;
+  }
+
+  ul {
+    list-style: none;
+    padding-left: 0;
+  }
+
+  li {
+    margin: 0.75rem 0;
+  }
+
+  li a {
+    color: var(--accent-pink);
+    font-weight: bold;
+    text-decoration: none;
+    transition: all 0.3s ease;
+  }
+
+  li a:hover {
+    color: var(--primary-text);
+    text-shadow: 0 0 6px var(--accent-pink);
+  }
+
+  li small {
+    color: var(--primary-text);
+    opacity: 0.7;
+    margin-left: 0.5rem;
+  }
+
+  li span.muted {
+    color: #b0a0c0;
+    font-size: 0.85rem;
+    margin-left: 0.5rem;
+  }
+</style>
+
+</head>
+<body>
   <header>
-    <p class="tag-summary">
-      Showing **{{ page.tagged_content | size }}** total items.
-    </p>
+    <!-- single H1 only -->
+    <h1>{{ page.title }}</h1>
+    <p><a href="{{ "/" | relative_url }}">Home</a> · <a href="{{ "/tags/" | relative_url }}">All tags</a></p>
   </header>
 
-  {% if page.tagged_content %}
-    <ul class="tagged-content-list">
-    {% for item in page.tagged_content %}
-      <li class="tagged-item">
-        <h3><a href="{{ item.url | relative_url }}">{{ item.title }}</a></h3>
-        
-        {% if item.date %}
-          <small class="item-date">{{ item.date | date: "%B %-d, %Y" }}</small>
-        {% endif %}
+  <main>
+    {%- comment -%} Prefer the generator-provided list (page.tagged_items), fallback to site.tags. {%- endcomment -%}
+    {% assign items = page.tagged_items %}
+    {% if items == nil or items == empty %}
+      {% if site.tags[page.tag] %}
+        {% assign items = site.tags[page.tag] %}
+      {% else %}
+        {% assign items = [] %}
+      {% endif %}
+    {% endif %}
 
-        {% if item.excerpt %}
-          <p>{{ item.excerpt | strip_html | truncate: 150 }}</p>
-        {% endif %}
-      </li>
-    {% endfor %}
-    </ul>
-  {% else %}
-    <p>We haven't created content for the **{{ page.tag }}** tag yet!</p>
-  {% endif %}
-</article>
+    {% if items == empty %}
+      <p>Showing <strong>0</strong> total items.</p>
+      <p>We haven't created content for the <strong>{{ page.tag }}</strong> tag yet!</p>
+    {% else %}
+      <p>Showing <strong>{{ items | size }}</strong> total items.</p>
+      <ul>
+        {% for it in items %}
+          {% comment %}
+            If generator produced hashes: it.title, it.url, it.date, it.collection
+            If fallback from site.tags: it is a doc/post object
+          {% endcomment %}
+
+          {% if it.title and it.url %}
+            <li>
+              <a href="{{ it.url | relative_url }}">{{ it.title }}</a>
+              {% if it.date %} — <small>{{ it.date | date: "%Y-%m-%d" }}</small>{% endif %}
+              {% if it.collection %} <span class="muted">({{ it.collection }})</span>{% endif %}
+            </li>
+          {% else %}
+            <li>
+              <a href="{{ it.url | relative_url }}">{{ it.title }}</a>
+              {% if it.date %} — <small>{{ it.date | date: "%Y-%m-%d" }}</small>{% endif %}
+            </li>
+          {% endif %}
+        {% endfor %}
+      </ul>
+    {% endif %}
+  </main>
+
+  <footer>
+    <p><small>&copy; {{ site.time | date: "%Y" }} {{ site.title }}</small></p>
+  </footer>
+</body>
+</html>
+
