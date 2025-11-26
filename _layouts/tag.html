@@ -1,14 +1,28 @@
----
-layout: default
----
-<h1>{{ page.title }}</h1>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width,initial-scale=1"/>
+  <title>Posts tagged "{{ page.tag }}" | {{ site.title }}</title>
+</head>
+<body>
+  <header>
+    <h1>Tag: {{ page.tag }}</h1>
+    <p><a href="{{ "/" | relative_url }}">Home</a> · <a href="{{ "/tags/" | relative_url }}">All tags</a></p>
+  </header>
 
-<h2>Total Items: {{ page.tagged_content | size }}</h2>
+  <main>
+    {% assign tag_posts = site.tags[page.tag] %}
+    {% if tag_posts and tag_posts.size > 0 %}
+      <ul>
+      {% for post in tag_posts %}
+        <li><a href="{{ post.url | relative_url }}">{{ post.title }}</a> — <small>{{ post.date | date: "%Y-%m-%d" }}</small></li>
+      {% endfor %}
+      </ul>
+    {% else %}
+      <p>No posts for this tag.</p>
+    {% endif %}
+  </main>
+</body>
+</html>
 
-<ul>
-  {% for item in page.tagged_content %}
-    <li>
-      <a href="{{ item.url | relative_url }}">{{ item.title }}</a>  
-    </li>
-  {% endfor %}
-</ul>
