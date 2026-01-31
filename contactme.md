@@ -13,13 +13,10 @@ If you'd like to reach out — whether for professional inquiries, collaboration
 You can reach me directly at:  
 📧 **liz.m.hofer@gmail.com**
 
-## Phone
-For time-sensitive or professional communication:  
-📱 **859-460-7536**
-
 ## GitHub
 Check out my code, projects, and ongoing experiments:  
-🐙 **[github.com/CheshireKitn](https://github.com/Eliza-Hofer)**
+https://github.com/Eliza-Hofer
+
 
 ## LinkedIn
 Connect with me professionally:  
